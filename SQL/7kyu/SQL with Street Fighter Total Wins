@@ -1,0 +1,10 @@
+select f.name, SUM(won) as won, SUM (lost) as lost
+from fighters f
+JOIN winning_moves wm
+	ON wm.id = f.move_id
+WHERE wm.move NOT LIKE 'Hadoken'
+	AND wm.move NOT LIKE 'Shouoken'
+	AND wm.move NOT LIKE 'Kikoken'
+GROUP BY f.name
+ORDER BY won DESC
+LIMIT 6;

@@ -1,0 +1,6 @@
+SELECT id,
+       INITCAP(firstname),
+       INITCAP(lastname)
+       FROM elves
+WHERE firstname LIKE '%tegil'
+	OR lastname LIKE '%astar';
