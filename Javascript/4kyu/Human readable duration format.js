@@ -21,10 +21,9 @@ function formatDuration(seconds) {
 	time.day    = Math.floor((seconds / 86400) % 365);
 	time.year   = Math.floor((seconds / 31536000));
 
-	let arr = Object.entries(time)
+	Object.entries(time)
 					.filter((unit) => unit[1] !== 0)
 					.map((unit) => {
-						console.log(unit);
 						if (+unit[1] > 1) {
 							return `${unit[1]} ${unit[0]}s`
 						}
@@ -47,10 +46,3 @@ function formatDuration(seconds) {
 console.log(60 * 60 * 24);
 console.log(15731080 / 86400);
 console.log(formatDuration(15731080));
-
-
-// time.second = seconds % 60;
-// time.minute = Math.floor((seconds / 60) % 60);
-// time.hour   = Math.floor((seconds / 3600) % 60);
-// time.day    = Math.floor((seconds / 86400) % 24);
-// time.year   = Math.floor((seconds / 31536000) % 365);
